@@ -1,107 +1,28 @@
-Code Sample
-===================
+# Overview
 
-We would like to get to know your coding style and see what you would consider your best work.
-In subsequent interviews, we'll talk through your code and make some changes.
+This is my solution to the Snap Raise RPN code challenge for iOS. The UI is implemented in SwiftUI, uses MVVM, and has unit test coverage and was implemented with Xcode 15.4
 
-CLI RPN Calculator
-==================
+# Reasoning
 
-Implement a command-line reverse polish notation (RPN) calculator using a language that you know well.
+SwiftUI is Apple's modern UI app framework. While SwiftUI is still [missing a few things](https://www.hackingwithswift.com/articles/270/whats-new-in-swiftui-for-ios-18) requiring developers to occasionally dip into UIKit, this code challenge did not use any such features and benefited from rapid feedback.
 
-Imaginary Context
------------------
+For the architecture, MVVM was used as this is the most common pattern in the iOS developer community today. The app could be quickly adapted to use an Action?State/Reducer architecture such as [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture?tab=readme-ov-file).
 
-We're building this command-line calculator for people who are comfortable with UNIX-like CLI utilities.
-We are starting with the basic 4 operators now but will want to eventually implement other operators and
-an alternate interface (such as WebSocket, file, or TCP socket).
-There's no need to implement these, but design with these future changes in mind.
+With a single developer and a single screen, this app was not large enough to benefit from app modularization.
 
-Specifications
---------------
+# Considerations
 
-1. The calculator should use standard input and standard output
-2. It should implement the four standard arithmetic operators
-3. The calculator should handle errors and recover gracefully
-4. The calculator should exit when it receives a `q` command or an end of input 
-   indicator (EOF / Ctrl+D)
+With more time, this app could benefit from:
 
-You may take creative liberty with anything else; have fun with it!
+* UI/UX
+    * More user-actionable errors
+    * Smarter user entry of equations by making `CalculatorView.ViewModel.currentInput` an array of `EquationElement`s.
+    * Better keypad layout
+    * Better support for iPad screens.
+* Technical
+    * More consideration on Unit Tests.
+    * UI tests
 
-Example Input/Output
---------------------
+# Running the Code
 
-Use your best judgment as far as the format is concerned, as long as it makes sense to the end user. Your calculator should at the minimum handle the following examples. 
-
-    > 5 
-    5
-    > 8
-    8
-    > +
-    13
-
----
-
-    > 5 5 5 8 + + -
-    -13.0
-    > 13 +
-    0.0
-
----
-
-    > -3
-    -3.0
-    > -2
-    -2.0
-    > *
-    6.0
-    > 5
-    5.0
-    > +
-    11.0
-
----
-
-    > 5
-    5
-    > 9
-    9
-    > 1
-    1
-    > -
-    8
-    > /
-    0.625
-
-Guidelines
-==========
-
-Things We Care About
---------------------
-
-These hold true both for this submission and for your work here in general. We expect that:
-
-- It works right
-- The code is well-abstracted and uses good names
-- It provides for a good user experience (end-user and programmer)
-- The code adheres to style and practices accepted by the community
-- Tests demonstrate intended use, help prevent regression, and can withstand change
-- You write intention-revealing commit messages
-
-There are a range of expectations from various companies in their interviewing code exercises, from minimal code to get the job done and prove you can program, to expecting exemplary code that demonstrates how well you can design things when the occasion requires it. We tend to judge toward the latter end of the spectrum, assuming that anyone who can write well-crafted code can also scale down quality to do things quickly, but not necessarily the other way around.
-
-Readme
-------
-
-Write your README as if it was for a production service. Include the following items:
-
-* A high-level description of your solution
-* Reasoning behind your technical choices, including architectural
-* Trade-offs you might have made, anything you left out, or what you might do differently if you were to spend additional time on the project
-* How to run your code, if applicable
-* Link to the hosted application, if applicable
-
-Submitting
-----------
-
-Submit your code as a **separate** git repository, preferably on GitHub
+Open `RPNCalc.xcodeproj` with Xcode 15.4 or later. Select a simulator or device and click the play button.
