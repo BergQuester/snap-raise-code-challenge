@@ -14,8 +14,6 @@
 		FEF5113A2C3C4D5600AB1EDA /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511392C3C4D5600AB1EDA /* CalculatorView.swift */; };
 		FEF5113C2C3C4D5800AB1EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */; };
 		FEF5113F2C3C4D5800AB1EDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF5113E2C3C4D5800AB1EDA /* Preview Assets.xcassets */; };
-		FEF511532C3C4D5800AB1EDA /* RPNCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511522C3C4D5800AB1EDA /* RPNCalcUITests.swift */; };
-		FEF511552C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511542C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift */; };
 		FEFB099E2C3C6CBD005DA687 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB09992C3C6CBD005DA687 /* Calculator.swift */; };
 		FEFB099F2C3C6CBD005DA687 /* EquationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB099A2C3C6CBD005DA687 /* EquationElement.swift */; };
 		FEFB09A02C3C6CBD005DA687 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB099B2C3C6CBD005DA687 /* Operator.swift */; };
@@ -51,8 +49,6 @@
 		FEF5113E2C3C4D5800AB1EDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEF511442C3C4D5800AB1EDA /* RPNCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF5114E2C3C4D5800AB1EDA /* RPNCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEF511522C3C4D5800AB1EDA /* RPNCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcUITests.swift; sourceTree = "<group>"; };
-		FEF511542C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		FEFB09992C3C6CBD005DA687 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		FEFB099A2C3C6CBD005DA687 /* EquationElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationElement.swift; sourceTree = "<group>"; };
 		FEFB099B2C3C6CBD005DA687 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
@@ -162,8 +158,6 @@
 		FEF511512C3C4D5800AB1EDA /* RPNCalcUITests */ = {
 			isa = PBXGroup;
 			children = (
-				FEF511522C3C4D5800AB1EDA /* RPNCalcUITests.swift */,
-				FEF511542C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift */,
 			);
 			path = RPNCalcUITests;
 			sourceTree = "<group>";
@@ -342,8 +336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEF511552C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift in Sources */,
-				FEF511532C3C4D5800AB1EDA /* RPNCalcUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
