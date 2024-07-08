@@ -12,6 +12,8 @@ struct CalculatorView: View {
 
     @State var viewModel = ViewModel()
 
+    let buttonSpacing: CGFloat = 5
+
     var body: some View {
 
         ZStack {
@@ -28,35 +30,36 @@ struct CalculatorView: View {
                     .padding()
 
                 // Keypad
-                VStack {
-                    HStack {
+                VStack(spacing: buttonSpacing) {
+                    HStack(spacing: buttonSpacing) {
                         button(withTitle: "C", color: Color(UIColor.darkGray), action: { viewModel.clear() })
-                        button(withTitle: "SP", color: Color(UIColor.darkGray), action: { viewModel.addSpace() })
                         button(withTitle: "-", color: Color(UIColor.darkGray), action: { viewModel.add(digit: "-") })
                         button(withTitle: "/", color: .orange, action: { viewModel.add(operation: "/") })
                     }
-                    HStack {
+                    HStack(spacing: buttonSpacing) {
                         button(withTitle: "7", color: .gray, action: { viewModel.add(digit: "7") })
                         button(withTitle: "8", color: .gray, action: { viewModel.add(digit: "8") })
                         button(withTitle: "9", color: .gray, action: { viewModel.add(digit: "9") })
                         button(withTitle: "*", color: .orange, action: { viewModel.add(operation: "*") })
                     }
-                    HStack {
+                    HStack(spacing: buttonSpacing) {
                         button(withTitle: "4", color: .gray, action: { viewModel.add(digit: "4") })
                         button(withTitle: "5", color: .gray, action: { viewModel.add(digit: "5") })
                         button(withTitle: "6", color: .gray, action: { viewModel.add(digit: "6") })
                         button(withTitle: "-", color: .orange, action: { viewModel.add(operation: "-") })
                     }
-                    HStack {
+                    HStack(spacing: buttonSpacing) {
                         button(withTitle: "1", color: .gray, action: { viewModel.add(digit: "1") })
                         button(withTitle: "2", color: .gray, action: { viewModel.add(digit: "2") })
                         button(withTitle: "3", color: .gray, action: { viewModel.add(digit: "3") })
                         button(withTitle: "+", color: .orange, action: { viewModel.add(operation: "+") })
                     }
-                    HStack {
+                    HStack(spacing: buttonSpacing) {
                         button(withTitle: "0", color: .gray, action: { viewModel.add(operation: "0") })
+                        button(withTitle: "_", color: Color(UIColor.darkGray), action: { viewModel.addSpace() })
                         button(withTitle: ".", color: .gray, action: { viewModel.add(digit: ".") })
-                        button(withTitle: "Enter", color: .orange, action: { viewModel.performCalculation() })
+                        button(withTitle: "↵", color: .orange, action: { viewModel.performCalculation() })
+
                     }
                 }
             }
@@ -66,19 +69,22 @@ struct CalculatorView: View {
 
 // MARK: - Helper Methods
 extension CalculatorView {
+    private var buttonSize: CGFloat {
+        let screenWidth = UIScreen.main.bounds.width
+        let horizontalButtonCount: CGFloat = 4
+        let spaceCount = horizontalButtonCount + 1
+        return ((screenWidth - (spaceCount * buttonSpacing)) / horizontalButtonCount)
+    }
+
     func button(withTitle title: String,
                 color: Color,
                 action: @escaping () -> Void) -> some View {
-        Button(action: action,
-               label: {
-            Text(title)
-        })
-        .buttonStyle(.borderedProminent)
-        .controlSize(.large)
-        .buttonBorderShape(.capsule)
-        .tint(color)
-        .foregroundColor(.white)
-        .padding(.horizontal)
+
+        Button(title, action: action)
+            .buttonStyle(CalculatorButtonStyle(
+                size: buttonSize,
+                backgroundColor: color)
+            )
     }
 }
 
