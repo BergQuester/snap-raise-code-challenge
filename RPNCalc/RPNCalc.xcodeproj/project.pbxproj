@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		FE65EB332C3C6D8D00BC5F8A /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65EB322C3C6D8D00BC5F8A /* CalculatorTests.swift */; };
+		FE8172622C3C8C4100C82E61 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8172612C3C8C4100C82E61 /* CalculatorViewModelTests.swift */; };
 		FEF511382C3C4D5600AB1EDA /* RPNCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511372C3C4D5600AB1EDA /* RPNCalcApp.swift */; };
 		FEF5113A2C3C4D5600AB1EDA /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511392C3C4D5600AB1EDA /* CalculatorView.swift */; };
 		FEF5113C2C3C4D5800AB1EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */; };
@@ -40,6 +41,7 @@
 
 /* Begin PBXFileReference section */
 		FE65EB322C3C6D8D00BC5F8A /* CalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
+		FE8172612C3C8C4100C82E61 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
 		FEF511342C3C4D5600AB1EDA /* RPNCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPNCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF511372C3C4D5600AB1EDA /* RPNCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcApp.swift; sourceTree = "<group>"; };
 		FEF511392C3C4D5600AB1EDA /* CalculatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorView.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		FE8172602C3C8C1B00C82E61 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				FE8172612C3C8C4100C82E61 /* CalculatorViewModelTests.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		FEF5112B2C3C4D5600AB1EDA = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 		FEF511472C3C4D5800AB1EDA /* RPNCalcTests */ = {
 			isa = PBXGroup;
 			children = (
+				FE8172602C3C8C1B00C82E61 /* Views */,
 				FEFB09A32C3C6CDD005DA687 /* Models */,
 			);
 			path = RPNCalcTests;
@@ -311,6 +322,7 @@
 			files = (
 				FEFB09A42C3C6CDD005DA687 /* EquationElementTests.swift in Sources */,
 				FE65EB332C3C6D8D00BC5F8A /* CalculatorTests.swift in Sources */,
+				FE8172622C3C8C4100C82E61 /* CalculatorViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

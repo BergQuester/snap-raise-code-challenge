@@ -99,9 +99,9 @@ extension CalculatorView {
                     // even though the view is set to read-only
         }
 
-        static let prompt = ">"
-        static let cursor = "_"
-        static var nonNumericCharacters = {
+        private static let prompt = ">"
+        private static let cursor = "_"
+        private static var nonNumericCharacters = {
             var nonNumeric = NSMutableCharacterSet.decimalDigits
             nonNumeric.insert(charactersIn: "-.")
             nonNumeric.invert()
@@ -120,7 +120,7 @@ extension CalculatorView {
         }
 
         func add(operation: String) {
-            currentInput += " " + operation + " "
+            currentInput += " " + operation
         }
 
         func addSpace() {
