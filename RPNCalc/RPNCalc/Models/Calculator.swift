@@ -17,6 +17,10 @@ struct Calculator {
         case parsingError
     }
 
+    mutating func clear() {
+        stack.clear()
+    }
+
     mutating func evaluate(string inputString: String) throws -> Double {
         guard let equation = Array(fromRPNString: inputString) else {
             throw CalculatorError.parsingError

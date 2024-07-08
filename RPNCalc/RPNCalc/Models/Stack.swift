@@ -22,4 +22,8 @@ struct Stack<Element> {
     func peek() -> Element? {
         items.last
     }
+
+    mutating func clear() {
+        items.removeAll()
+    }
 }
