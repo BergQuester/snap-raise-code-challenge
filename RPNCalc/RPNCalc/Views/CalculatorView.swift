@@ -29,6 +29,7 @@ struct CalculatorView: View {
                             Text(viewModel.display)
                                 .font(.system(size: 24, weight: .medium))
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                                .foregroundStyle(.white)
                             Spacer()
                                 .id("bottom")
                         }
