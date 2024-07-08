@@ -23,11 +23,22 @@ struct CalculatorView: View {
 
             VStack {
                 // Output
-                TextEditor(text: $viewModel.display)
-                    .disabled(true)
-                    .scrollContentBackground(.hidden)
-                    .foregroundColor(.white)
-                    .padding()
+                ScrollView {
+                    ScrollViewReader { value in
+                        VStack(alignment: .leading) {
+                            Text(viewModel.display)
+                                .font(.system(size: 24, weight: .medium))
+                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                            Spacer()
+                                .id("bottom")
+                        }
+                        .onChange(of: viewModel.display) {
+                            value.scrollTo("bottom")
+                        }
+                    }
+
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
 
                 // Keypad
                 VStack(spacing: buttonSpacing) {
