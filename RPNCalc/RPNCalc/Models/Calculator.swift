@@ -9,10 +9,4 @@ import Foundation
 
 struct Calculator {
     private var stack: Stack<EquationElement> = Stack()
-
-    enum EquationElement {
-        case value(Double)
-        case operation(Operator) // 'operator' is reserved by Swift
-    }
 }
-

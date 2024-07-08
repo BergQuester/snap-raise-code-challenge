@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum Operator {
+enum Operator: Equatable {
     case addition
     case subtraction
     case multiplication
@@ -17,7 +17,7 @@ enum Operator {
         case divideByZero
     }
 
-    init?(fromSymbol symbol: String) {
+    init?(fromSymbol symbol: Substring) {
         switch symbol {
         case "+": self = .addition
         case "-": self = .subtraction
