@@ -11,9 +11,13 @@
 		FEF5113A2C3C4D5600AB1EDA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511392C3C4D5600AB1EDA /* ContentView.swift */; };
 		FEF5113C2C3C4D5800AB1EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */; };
 		FEF5113F2C3C4D5800AB1EDA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF5113E2C3C4D5800AB1EDA /* Preview Assets.xcassets */; };
-		FEF511492C3C4D5800AB1EDA /* RPNCalcTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511482C3C4D5800AB1EDA /* RPNCalcTests.swift */; };
 		FEF511532C3C4D5800AB1EDA /* RPNCalcUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511522C3C4D5800AB1EDA /* RPNCalcUITests.swift */; };
 		FEF511552C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511542C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift */; };
+		FEFB099E2C3C6CBD005DA687 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB09992C3C6CBD005DA687 /* Calculator.swift */; };
+		FEFB099F2C3C6CBD005DA687 /* EquationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB099A2C3C6CBD005DA687 /* EquationElement.swift */; };
+		FEFB09A02C3C6CBD005DA687 /* Operator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB099B2C3C6CBD005DA687 /* Operator.swift */; };
+		FEFB09A12C3C6CBD005DA687 /* Stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB099C2C3C6CBD005DA687 /* Stack.swift */; };
+		FEFB09A42C3C6CDD005DA687 /* EquationElementTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEFB09A22C3C6CDD005DA687 /* EquationElementTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +44,14 @@
 		FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEF5113E2C3C4D5800AB1EDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEF511442C3C4D5800AB1EDA /* RPNCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEF511482C3C4D5800AB1EDA /* RPNCalcTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcTests.swift; sourceTree = "<group>"; };
 		FEF5114E2C3C4D5800AB1EDA /* RPNCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF511522C3C4D5800AB1EDA /* RPNCalcUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcUITests.swift; sourceTree = "<group>"; };
 		FEF511542C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FEFB09992C3C6CBD005DA687 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
+		FEFB099A2C3C6CBD005DA687 /* EquationElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationElement.swift; sourceTree = "<group>"; };
+		FEFB099B2C3C6CBD005DA687 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
+		FEFB099C2C3C6CBD005DA687 /* Stack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stack.swift; sourceTree = "<group>"; };
+		FEFB09A22C3C6CDD005DA687 /* EquationElementTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationElementTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +102,7 @@
 		FEF511362C3C4D5600AB1EDA /* RPNCalc */ = {
 			isa = PBXGroup;
 			children = (
+				FEFB099D2C3C6CBD005DA687 /* Models */,
 				FEF511372C3C4D5600AB1EDA /* RPNCalcApp.swift */,
 				FEF511392C3C4D5600AB1EDA /* ContentView.swift */,
 				FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */,
@@ -113,7 +122,7 @@
 		FEF511472C3C4D5800AB1EDA /* RPNCalcTests */ = {
 			isa = PBXGroup;
 			children = (
-				FEF511482C3C4D5800AB1EDA /* RPNCalcTests.swift */,
+				FEFB09A32C3C6CDD005DA687 /* Models */,
 			);
 			path = RPNCalcTests;
 			sourceTree = "<group>";
@@ -125,6 +134,25 @@
 				FEF511542C3C4D5800AB1EDA /* RPNCalcUITestsLaunchTests.swift */,
 			);
 			path = RPNCalcUITests;
+			sourceTree = "<group>";
+		};
+		FEFB099D2C3C6CBD005DA687 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEFB09992C3C6CBD005DA687 /* Calculator.swift */,
+				FEFB099A2C3C6CBD005DA687 /* EquationElement.swift */,
+				FEFB099B2C3C6CBD005DA687 /* Operator.swift */,
+				FEFB099C2C3C6CBD005DA687 /* Stack.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FEFB09A32C3C6CDD005DA687 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FEFB09A22C3C6CDD005DA687 /* EquationElementTests.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -257,8 +285,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEFB099F2C3C6CBD005DA687 /* EquationElement.swift in Sources */,
 				FEF5113A2C3C4D5600AB1EDA /* ContentView.swift in Sources */,
+				FEFB09A02C3C6CBD005DA687 /* Operator.swift in Sources */,
 				FEF511382C3C4D5600AB1EDA /* RPNCalcApp.swift in Sources */,
+				FEFB09A12C3C6CBD005DA687 /* Stack.swift in Sources */,
+				FEFB099E2C3C6CBD005DA687 /* Calculator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FEF511492C3C4D5800AB1EDA /* RPNCalcTests.swift in Sources */,
+				FEFB09A42C3C6CDD005DA687 /* EquationElementTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
