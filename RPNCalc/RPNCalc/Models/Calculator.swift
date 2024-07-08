@@ -10,13 +10,16 @@ import Foundation
 struct Calculator {
     private var stack: Stack<EquationElement> = Stack()
 
-    enum CalculatorError: Error {
+    enum CalculatorError: Error, Equatable {
         case notEnoughOperands
+        case expectedResultValue
+
+        case parsingError
     }
 
-    mutating func evaluate(string inputString: String) -> Double? {
+    mutating func evaluate(string inputString: String) throws -> Double {
         guard let equation = Array(fromRPNString: inputString) else {
-            return nil
+            throw CalculatorError.parsingError
         }
 
         let originalStack = stack
@@ -27,11 +30,11 @@ struct Calculator {
             }
         } catch {
             stack = originalStack
-            // TODO: Log error
+            throw error
         }
 
         guard case let .value(calculatedValue) = stack.peek() else {
-            return nil
+            throw CalculatorError.expectedResultValue
         }
         return calculatedValue
     }
