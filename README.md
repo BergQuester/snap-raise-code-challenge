@@ -26,3 +26,5 @@ With more time, this app could benefit from:
 # Running the Code
 
 Open `RPNCalc.xcodeproj` with Xcode 15.4 or later. Select a simulator or device and click the play button.
+
+![Screenshot of code challenge app](Screenshot.png)
