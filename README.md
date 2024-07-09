@@ -6,7 +6,7 @@ This is my solution to the Snap Raise RPN code challenge for iOS. The UI is impl
 
 SwiftUI is Apple's modern UI app framework. While SwiftUI is still [missing a few things](https://www.hackingwithswift.com/articles/270/whats-new-in-swiftui-for-ios-18) requiring developers to occasionally dip into UIKit, this code challenge did not use any such features and benefited from rapid feedback.
 
-For the architecture, MVVM was used as this is the most common pattern in the iOS developer community today. The app could be quickly adapted to use an Action?State/Reducer architecture such as [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture?tab=readme-ov-file).
+For the architecture, MVVM was used as this is the most common pattern in the iOS developer community today. The app could be quickly adapted to use an Action/State/Reducer architecture such as [The Composable Architecture](https://github.com/pointfreeco/swift-composable-architecture?tab=readme-ov-file). Indeed, I have implemented an alternative version in the `composable_architecture` branch of this repo.
 
 With a single developer and a single screen, this app was not large enough to benefit from app modularization.
 
