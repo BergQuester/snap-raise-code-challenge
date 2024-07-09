@@ -76,6 +76,7 @@ extension CalculatorView {
                 button(withTitle: "C", color: Color(UIColor.darkGray), action: { viewModel.clear() })
                 button(withTitle: "-", color: Color(UIColor.darkGray), action: { viewModel.add(digit: "-") })
                 Spacer()
+                    .frame(width: buttonSize, height: buttonSize)
                 button(withTitle: "/", color: .orange, action: { viewModel.add(operation: "/") })
             }
             HStack(spacing: buttonSpacing) {
