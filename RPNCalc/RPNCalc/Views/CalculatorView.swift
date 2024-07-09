@@ -46,6 +46,7 @@ struct CalculatorView: View {
                     HStack(spacing: buttonSpacing) {
                         button(withTitle: "C", color: Color(UIColor.darkGray), action: { viewModel.clear() })
                         button(withTitle: "-", color: Color(UIColor.darkGray), action: { viewModel.add(digit: "-") })
+                        Spacer()
                         button(withTitle: "/", color: .orange, action: { viewModel.add(operation: "/") })
                     }
                     HStack(spacing: buttonSpacing) {
