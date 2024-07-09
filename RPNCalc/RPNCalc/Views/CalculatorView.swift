@@ -22,59 +22,8 @@ struct CalculatorView: View {
                 .ignoresSafeArea()
 
             VStack {
-                // Output
-                ScrollView {
-                    ScrollViewReader { value in
-                        VStack(alignment: .leading) {
-                            Text(viewModel.display)
-                                .font(.system(size: 24, weight: .medium))
-                                .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                .foregroundStyle(.white)
-                            Spacer()
-                                .id("bottom")
-                        }
-                        .onChange(of: viewModel.display) {
-                            value.scrollTo("bottom")
-                        }
-                    }
-
-                }
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
-
-                // Keypad
-                VStack(spacing: buttonSpacing) {
-                    HStack(spacing: buttonSpacing) {
-                        button(withTitle: "C", color: Color(UIColor.darkGray), action: { viewModel.clear() })
-                        button(withTitle: "-", color: Color(UIColor.darkGray), action: { viewModel.add(digit: "-") })
-                        Spacer()
-                        button(withTitle: "/", color: .orange, action: { viewModel.add(operation: "/") })
-                    }
-                    HStack(spacing: buttonSpacing) {
-                        button(withTitle: "7", color: .gray, action: { viewModel.add(digit: "7") })
-                        button(withTitle: "8", color: .gray, action: { viewModel.add(digit: "8") })
-                        button(withTitle: "9", color: .gray, action: { viewModel.add(digit: "9") })
-                        button(withTitle: "*", color: .orange, action: { viewModel.add(operation: "*") })
-                    }
-                    HStack(spacing: buttonSpacing) {
-                        button(withTitle: "4", color: .gray, action: { viewModel.add(digit: "4") })
-                        button(withTitle: "5", color: .gray, action: { viewModel.add(digit: "5") })
-                        button(withTitle: "6", color: .gray, action: { viewModel.add(digit: "6") })
-                        button(withTitle: "-", color: .orange, action: { viewModel.add(operation: "-") })
-                    }
-                    HStack(spacing: buttonSpacing) {
-                        button(withTitle: "1", color: .gray, action: { viewModel.add(digit: "1") })
-                        button(withTitle: "2", color: .gray, action: { viewModel.add(digit: "2") })
-                        button(withTitle: "3", color: .gray, action: { viewModel.add(digit: "3") })
-                        button(withTitle: "+", color: .orange, action: { viewModel.add(operation: "+") })
-                    }
-                    HStack(spacing: buttonSpacing) {
-                        button(withTitle: "0", color: .gray, action: { viewModel.add(operation: "0") })
-                        button(withTitle: "_", color: Color(UIColor.darkGray), action: { viewModel.addSpace() })
-                        button(withTitle: ".", color: .gray, action: { viewModel.add(digit: ".") })
-                        button(withTitle: "↵", color: .orange, action: { viewModel.performCalculation() })
-
-                    }
-                }
+                history()
+                keypad()
             }
         }
     }
@@ -98,6 +47,63 @@ extension CalculatorView {
                 size: buttonSize,
                 backgroundColor: color)
             )
+    }
+
+    func history() -> some View {
+        ScrollView {
+            ScrollViewReader { value in
+                VStack(alignment: .leading) {
+                    Text(viewModel.display)
+                        .font(.system(size: 24, weight: .medium))
+                        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
+                        .foregroundStyle(.white)
+                    Spacer()
+                        .id("bottom")
+                }
+                .onChange(of: viewModel.display) {
+                    value.scrollTo("bottom")
+                }
+            }
+
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+
+    func keypad() -> some View {
+        // Keypad
+        VStack(spacing: buttonSpacing) {
+            HStack(spacing: buttonSpacing) {
+                button(withTitle: "C", color: Color(UIColor.darkGray), action: { viewModel.clear() })
+                button(withTitle: "-", color: Color(UIColor.darkGray), action: { viewModel.add(digit: "-") })
+                Spacer()
+                button(withTitle: "/", color: .orange, action: { viewModel.add(operation: "/") })
+            }
+            HStack(spacing: buttonSpacing) {
+                button(withTitle: "7", color: .gray, action: { viewModel.add(digit: "7") })
+                button(withTitle: "8", color: .gray, action: { viewModel.add(digit: "8") })
+                button(withTitle: "9", color: .gray, action: { viewModel.add(digit: "9") })
+                button(withTitle: "*", color: .orange, action: { viewModel.add(operation: "*") })
+            }
+            HStack(spacing: buttonSpacing) {
+                button(withTitle: "4", color: .gray, action: { viewModel.add(digit: "4") })
+                button(withTitle: "5", color: .gray, action: { viewModel.add(digit: "5") })
+                button(withTitle: "6", color: .gray, action: { viewModel.add(digit: "6") })
+                button(withTitle: "-", color: .orange, action: { viewModel.add(operation: "-") })
+            }
+            HStack(spacing: buttonSpacing) {
+                button(withTitle: "1", color: .gray, action: { viewModel.add(digit: "1") })
+                button(withTitle: "2", color: .gray, action: { viewModel.add(digit: "2") })
+                button(withTitle: "3", color: .gray, action: { viewModel.add(digit: "3") })
+                button(withTitle: "+", color: .orange, action: { viewModel.add(operation: "+") })
+            }
+            HStack(spacing: buttonSpacing) {
+                button(withTitle: "0", color: .gray, action: { viewModel.add(operation: "0") })
+                button(withTitle: "_", color: Color(UIColor.darkGray), action: { viewModel.addSpace() })
+                button(withTitle: ".", color: .gray, action: { viewModel.add(digit: ".") })
+                button(withTitle: "↵", color: .orange, action: { viewModel.performCalculation() })
+
+            }
+        }
     }
 }
 
