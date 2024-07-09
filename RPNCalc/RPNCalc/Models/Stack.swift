@@ -8,7 +8,7 @@
 import Foundation
 
 /// A simple generic implementation of a stack
-struct Stack<Element> {
+struct Stack<Element: Equatable>: Equatable {
     private var items: [Element] = []
 
     mutating func push(_ item: Element) {

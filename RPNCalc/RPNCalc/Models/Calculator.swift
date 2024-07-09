@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Calculator {
+struct Calculator: Equatable {
     private var stack: Stack<EquationElement> = Stack()
 
     enum CalculatorError: Error, Equatable {

@@ -6,12 +6,16 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
 
 @main
 struct RPNCalcApp: App {
     var body: some Scene {
         WindowGroup {
-            CalculatorView()
+            CalculatorView(store: Store(initialState: CalculatorFeature.State()) {
+                CalculatorFeature()
+            }
+            )
         }
     }
 }

@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE4C76A32C3DE11700ED711E /* Perception in Frameworks */ = {isa = PBXBuildFile; productRef = FE4C76A22C3DE11700ED711E /* Perception */; };
+		FE4C76A62C3DE14400ED711E /* CasePaths in Frameworks */ = {isa = PBXBuildFile; productRef = FE4C76A52C3DE14400ED711E /* CasePaths */; };
 		FE65EB332C3C6D8D00BC5F8A /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE65EB322C3C6D8D00BC5F8A /* CalculatorTests.swift */; };
-		FE8172622C3C8C4100C82E61 /* CalculatorViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8172612C3C8C4100C82E61 /* CalculatorViewModelTests.swift */; };
+		FE6A3CE32C3DC10A00C2FEE7 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FE6A3CE22C3DC10A00C2FEE7 /* ComposableArchitecture */; };
+		FE8172622C3C8C4100C82E61 /* CalculatorFeatureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8172612C3C8C4100C82E61 /* CalculatorFeatureTests.swift */; };
 		FE8172652C3C9A1700C82E61 /* CalculatorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE8172642C3C9A1700C82E61 /* CalculatorButtonStyle.swift */; };
+		FE9BF0F62C3DD7DC00F705A0 /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = FE9BF0F52C3DD7DC00F705A0 /* ComposableArchitecture */; };
 		FEF511382C3C4D5600AB1EDA /* RPNCalcApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511372C3C4D5600AB1EDA /* RPNCalcApp.swift */; };
 		FEF5113A2C3C4D5600AB1EDA /* CalculatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF511392C3C4D5600AB1EDA /* CalculatorView.swift */; };
 		FEF5113C2C3C4D5800AB1EDA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */; };
@@ -29,18 +33,12 @@
 			remoteGlobalIDString = FEF511332C3C4D5600AB1EDA;
 			remoteInfo = RPNCalc;
 		};
-		FEF5114F2C3C4D5800AB1EDA /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FEF5112C2C3C4D5600AB1EDA /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = FEF511332C3C4D5600AB1EDA;
-			remoteInfo = RPNCalc;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FE4C769F2C3DDE4500ED711E /* CoreAudioTypes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreAudioTypes.framework; path = System/Library/Frameworks/CoreAudioTypes.framework; sourceTree = SDKROOT; };
 		FE65EB322C3C6D8D00BC5F8A /* CalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
-		FE8172612C3C8C4100C82E61 /* CalculatorViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewModelTests.swift; sourceTree = "<group>"; };
+		FE8172612C3C8C4100C82E61 /* CalculatorFeatureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorFeatureTests.swift; sourceTree = "<group>"; };
 		FE8172642C3C9A1700C82E61 /* CalculatorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorButtonStyle.swift; sourceTree = "<group>"; };
 		FEF511342C3C4D5600AB1EDA /* RPNCalc.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RPNCalc.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEF511372C3C4D5600AB1EDA /* RPNCalcApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RPNCalcApp.swift; sourceTree = "<group>"; };
@@ -48,7 +46,6 @@
 		FEF5113B2C3C4D5800AB1EDA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FEF5113E2C3C4D5800AB1EDA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FEF511442C3C4D5800AB1EDA /* RPNCalcTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalcTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		FEF5114E2C3C4D5800AB1EDA /* RPNCalcUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RPNCalcUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEFB09992C3C6CBD005DA687 /* Calculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
 		FEFB099A2C3C6CBD005DA687 /* EquationElement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EquationElement.swift; sourceTree = "<group>"; };
 		FEFB099B2C3C6CBD005DA687 /* Operator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operator.swift; sourceTree = "<group>"; };
@@ -61,6 +58,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE6A3CE32C3DC10A00C2FEE7 /* ComposableArchitecture in Frameworks */,
+				FE4C76A32C3DE11700ED711E /* Perception in Frameworks */,
+				FE4C76A62C3DE14400ED711E /* CasePaths in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -68,13 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEF5114B2C3C4D5800AB1EDA /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FE9BF0F62C3DD7DC00F705A0 /* ComposableArchitecture in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,7 +86,7 @@
 		FE8172602C3C8C1B00C82E61 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				FE8172612C3C8C4100C82E61 /* CalculatorViewModelTests.swift */,
+				FE8172612C3C8C4100C82E61 /* CalculatorFeatureTests.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -105,13 +99,21 @@
 			path = Styles;
 			sourceTree = "<group>";
 		};
+		FE9BF0F42C3DD7DC00F705A0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE4C769F2C3DDE4500ED711E /* CoreAudioTypes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FEF5112B2C3C4D5600AB1EDA = {
 			isa = PBXGroup;
 			children = (
 				FEF511362C3C4D5600AB1EDA /* RPNCalc */,
 				FEF511472C3C4D5800AB1EDA /* RPNCalcTests */,
-				FEF511512C3C4D5800AB1EDA /* RPNCalcUITests */,
 				FEF511352C3C4D5600AB1EDA /* Products */,
+				FE9BF0F42C3DD7DC00F705A0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -120,7 +122,6 @@
 			children = (
 				FEF511342C3C4D5600AB1EDA /* RPNCalc.app */,
 				FEF511442C3C4D5800AB1EDA /* RPNCalcTests.xctest */,
-				FEF5114E2C3C4D5800AB1EDA /* RPNCalcUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,13 +154,6 @@
 				FEFB09A32C3C6CDD005DA687 /* Models */,
 			);
 			path = RPNCalcTests;
-			sourceTree = "<group>";
-		};
-		FEF511512C3C4D5800AB1EDA /* RPNCalcUITests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = RPNCalcUITests;
 			sourceTree = "<group>";
 		};
 		FEFB099D2C3C6CBD005DA687 /* Models */ = {
@@ -198,6 +192,11 @@
 			dependencies = (
 			);
 			name = RPNCalc;
+			packageProductDependencies = (
+				FE6A3CE22C3DC10A00C2FEE7 /* ComposableArchitecture */,
+				FE4C76A22C3DE11700ED711E /* Perception */,
+				FE4C76A52C3DE14400ED711E /* CasePaths */,
+			);
 			productName = RPNCalc;
 			productReference = FEF511342C3C4D5600AB1EDA /* RPNCalc.app */;
 			productType = "com.apple.product-type.application";
@@ -216,27 +215,12 @@
 				FEF511462C3C4D5800AB1EDA /* PBXTargetDependency */,
 			);
 			name = RPNCalcTests;
+			packageProductDependencies = (
+				FE9BF0F52C3DD7DC00F705A0 /* ComposableArchitecture */,
+			);
 			productName = RPNCalcTests;
 			productReference = FEF511442C3C4D5800AB1EDA /* RPNCalcTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		FEF5114D2C3C4D5800AB1EDA /* RPNCalcUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = FEF5115E2C3C4D5800AB1EDA /* Build configuration list for PBXNativeTarget "RPNCalcUITests" */;
-			buildPhases = (
-				FEF5114A2C3C4D5800AB1EDA /* Sources */,
-				FEF5114B2C3C4D5800AB1EDA /* Frameworks */,
-				FEF5114C2C3C4D5800AB1EDA /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				FEF511502C3C4D5800AB1EDA /* PBXTargetDependency */,
-			);
-			name = RPNCalcUITests;
-			productName = RPNCalcUITests;
-			productReference = FEF5114E2C3C4D5800AB1EDA /* RPNCalcUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -255,10 +239,6 @@
 						CreatedOnToolsVersion = 15.4;
 						TestTargetID = FEF511332C3C4D5600AB1EDA;
 					};
-					FEF5114D2C3C4D5800AB1EDA = {
-						CreatedOnToolsVersion = 15.4;
-						TestTargetID = FEF511332C3C4D5600AB1EDA;
-					};
 				};
 			};
 			buildConfigurationList = FEF5112F2C3C4D5600AB1EDA /* Build configuration list for PBXProject "RPNCalc" */;
@@ -270,13 +250,17 @@
 				Base,
 			);
 			mainGroup = FEF5112B2C3C4D5600AB1EDA;
+			packageReferences = (
+				FE6A3CE12C3DC10A00C2FEE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */,
+				FE4C76A12C3DE11700ED711E /* XCRemoteSwiftPackageReference "swift-perception" */,
+				FE4C76A42C3DE14400ED711E /* XCRemoteSwiftPackageReference "swift-case-paths" */,
+			);
 			productRefGroup = FEF511352C3C4D5600AB1EDA /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FEF511332C3C4D5600AB1EDA /* RPNCalc */,
 				FEF511432C3C4D5800AB1EDA /* RPNCalcTests */,
-				FEF5114D2C3C4D5800AB1EDA /* RPNCalcUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -292,13 +276,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		FEF511422C3C4D5800AB1EDA /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEF5114C2C3C4D5800AB1EDA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -328,14 +305,7 @@
 			files = (
 				FEFB09A42C3C6CDD005DA687 /* EquationElementTests.swift in Sources */,
 				FE65EB332C3C6D8D00BC5F8A /* CalculatorTests.swift in Sources */,
-				FE8172622C3C8C4100C82E61 /* CalculatorViewModelTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FEF5114A2C3C4D5800AB1EDA /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				FE8172622C3C8C4100C82E61 /* CalculatorFeatureTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,11 +316,6 @@
 			isa = PBXTargetDependency;
 			target = FEF511332C3C4D5600AB1EDA /* RPNCalc */;
 			targetProxy = FEF511452C3C4D5800AB1EDA /* PBXContainerItemProxy */;
-		};
-		FEF511502C3C4D5800AB1EDA /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = FEF511332C3C4D5600AB1EDA /* RPNCalc */;
-			targetProxy = FEF5114F2C3C4D5800AB1EDA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -572,42 +537,6 @@
 			};
 			name = Release;
 		};
-		FEF5115F2C3C4D5800AB1EDA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7LSUEYG3GC;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bergquester.RPNCalcUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RPNCalc;
-			};
-			name = Debug;
-		};
-		FEF511602C3C4D5800AB1EDA /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 7LSUEYG3GC;
-				GENERATE_INFOPLIST_FILE = YES;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bergquester.RPNCalcUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_EMIT_LOC_STRINGS = NO;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = RPNCalc;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -638,16 +567,57 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FEF5115E2C3C4D5800AB1EDA /* Build configuration list for PBXNativeTarget "RPNCalcUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FEF5115F2C3C4D5800AB1EDA /* Debug */,
-				FEF511602C3C4D5800AB1EDA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FE4C76A12C3DE11700ED711E /* XCRemoteSwiftPackageReference "swift-perception" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-perception.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.4;
+			};
+		};
+		FE4C76A42C3DE14400ED711E /* XCRemoteSwiftPackageReference "swift-case-paths" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-case-paths.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.2;
+			};
+		};
+		FE6A3CE12C3DC10A00C2FEE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/pointfreeco/swift-composable-architecture.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.11.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FE4C76A22C3DE11700ED711E /* Perception */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE4C76A12C3DE11700ED711E /* XCRemoteSwiftPackageReference "swift-perception" */;
+			productName = Perception;
+		};
+		FE4C76A52C3DE14400ED711E /* CasePaths */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE4C76A42C3DE14400ED711E /* XCRemoteSwiftPackageReference "swift-case-paths" */;
+			productName = CasePaths;
+		};
+		FE6A3CE22C3DC10A00C2FEE7 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE6A3CE12C3DC10A00C2FEE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+		FE9BF0F52C3DD7DC00F705A0 /* ComposableArchitecture */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FE6A3CE12C3DC10A00C2FEE7 /* XCRemoteSwiftPackageReference "swift-composable-architecture" */;
+			productName = ComposableArchitecture;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FEF5112C2C3C4D5600AB1EDA /* Project object */;
 }

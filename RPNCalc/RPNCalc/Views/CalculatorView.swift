@@ -6,11 +6,89 @@
 //
 
 import SwiftUI
+import ComposableArchitecture
+
+@Reducer
+struct CalculatorFeature {
+
+    @ObservableState
+    struct State: Equatable {
+
+        var calculator = Calculator()
+        var history = ""
+        var currentInput = ""
+
+        var display: String { history + "\n" + Self.prompt + " " + currentInput + Self.cursor }
+
+        static let prompt = ">"
+        static let cursor = "_"
+        static var nonNumericCharacters = {
+            var nonNumeric = NSMutableCharacterSet.decimalDigits
+            nonNumeric.insert(charactersIn: "-.")
+            nonNumeric.invert()
+            return nonNumeric
+        }()
+    }
+
+    enum Action {
+        case addDigit(String)
+        case addOperation(String)
+        case addSpace
+        case clear
+        case performCalulation
+    }
+
+    var body: some Reducer<State, Action> {
+        Reduce { state, action in
+            switch action {
+            case let .addDigit(digit):
+                // If the last item on the input is not part of a numerical value
+                // add a space
+                if let lastToken = state.currentInput.split(separator: " ").last,
+                   lastToken.rangeOfCharacter(from: State.nonNumericCharacters) != nil {
+                    state.currentInput += " "
+                }
+
+                state.currentInput += digit
+                return .none
+
+            case let .addOperation(operation):
+                state.currentInput += " " + operation
+                return .none
+
+            case .addSpace:
+                state.currentInput += " "
+                return .none
+
+            case .clear:
+                if state.currentInput.isEmpty {
+                    state.history = ""
+                } else {
+                    state.currentInput = ""
+                }
+                return .none
+
+            case .performCalulation:
+                guard !state.currentInput.isEmpty else { return .none }
+
+                do {
+                    let result = try state.calculator.evaluate(string: state.currentInput)
+                    state.history += "\n" + State.prompt + " " + state.currentInput
+                    state.history += "\n" + String(result)
+                    state.currentInput = ""
+                } catch {
+                    state.history += "\nPlease check your equation for correct RPN formatting"
+                }
+                return .none
+            }
+        }
+    }
+}
 
 // MARK: - View main body
 struct CalculatorView: View {
 
-    @State var viewModel = ViewModel()
+    let store: StoreOf<CalculatorFeature>
 
     let buttonSpacing: CGFloat = 5
 
@@ -53,14 +131,14 @@ extension CalculatorView {
         ScrollView {
             ScrollViewReader { value in
                 VStack(alignment: .leading) {
-                    Text(viewModel.display)
+                    Text(store.display)
                         .font(.system(size: 24, weight: .medium))
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
                         .foregroundStyle(.white)
                     Spacer()
                         .id("bottom")
                 }
-                .onChange(of: viewModel.display) {
+                .onChange(of: store.display) {
                     value.scrollTo("bottom")
                 }
             }
@@ -73,107 +151,44 @@ extension CalculatorView {
         // Keypad
         VStack(spacing: buttonSpacing) {
             HStack(spacing: buttonSpacing) {
-                button(withTitle: "C", color: Color(UIColor.darkGray), action: { viewModel.clear() })
-                button(withTitle: "-", color: Color(UIColor.darkGray), action: { viewModel.add(digit: "-") })
+                button(withTitle: "C", color: Color(UIColor.darkGray), action: { store.send(.clear) })
+                button(withTitle: "-", color: Color(UIColor.darkGray), action: { store.send(.addDigit("-")) })
                 Spacer()
                     .frame(width: buttonSize, height: buttonSize)
-                button(withTitle: "/", color: .orange, action: { viewModel.add(operation: "/") })
+                button(withTitle: "/", color: .orange, action: { store.send(.addOperation("/")) })
             }
             HStack(spacing: buttonSpacing) {
-                button(withTitle: "7", color: .gray, action: { viewModel.add(digit: "7") })
-                button(withTitle: "8", color: .gray, action: { viewModel.add(digit: "8") })
-                button(withTitle: "9", color: .gray, action: { viewModel.add(digit: "9") })
-                button(withTitle: "*", color: .orange, action: { viewModel.add(operation: "*") })
+                button(withTitle: "7", color: .gray, action: { store.send(.addDigit("7")) })
+                button(withTitle: "8", color: .gray, action: { store.send(.addDigit("8")) })
+                button(withTitle: "9", color: .gray, action: { store.send(.addDigit("9")) })
+                button(withTitle: "*", color: .orange, action: { store.send(.addOperation("*")) })
             }
             HStack(spacing: buttonSpacing) {
-                button(withTitle: "4", color: .gray, action: { viewModel.add(digit: "4") })
-                button(withTitle: "5", color: .gray, action: { viewModel.add(digit: "5") })
-                button(withTitle: "6", color: .gray, action: { viewModel.add(digit: "6") })
-                button(withTitle: "-", color: .orange, action: { viewModel.add(operation: "-") })
+                button(withTitle: "4", color: .gray, action: { store.send(.addDigit("4")) })
+                button(withTitle: "5", color: .gray, action: { store.send(.addDigit("5")) })
+                button(withTitle: "6", color: .gray, action: { store.send(.addDigit("6")) })
+                button(withTitle: "-", color: .orange, action: { store.send(.addOperation("-")) })
             }
             HStack(spacing: buttonSpacing) {
-                button(withTitle: "1", color: .gray, action: { viewModel.add(digit: "1") })
-                button(withTitle: "2", color: .gray, action: { viewModel.add(digit: "2") })
-                button(withTitle: "3", color: .gray, action: { viewModel.add(digit: "3") })
-                button(withTitle: "+", color: .orange, action: { viewModel.add(operation: "+") })
+                button(withTitle: "1", color: .gray, action: { store.send(.addDigit("1")) })
+                button(withTitle: "2", color: .gray, action: { store.send(.addDigit("2")) })
+                button(withTitle: "3", color: .gray, action: { store.send(.addDigit("3")) })
+                button(withTitle: "+", color: .orange, action: { store.send(.addOperation("+")) })
             }
             HStack(spacing: buttonSpacing) {
-                button(withTitle: "0", color: .gray, action: { viewModel.add(operation: "0") })
-                button(withTitle: "_", color: Color(UIColor.darkGray), action: { viewModel.addSpace() })
-                button(withTitle: ".", color: .gray, action: { viewModel.add(digit: ".") })
-                button(withTitle: "↵", color: .orange, action: { viewModel.performCalculation() })
+                button(withTitle: "0", color: .gray, action: { store.send(.addDigit("0")) })
+                button(withTitle: "_", color: Color(UIColor.darkGray), action: { store.send(.addSpace) })
+                button(withTitle: ".", color: .gray, action: { store.send(.addDigit(".")) })
+                button(withTitle: "↵", color: .orange, action: { store.send(.performCalulation) })
 
-            }
-        }
-    }
-}
-
-// MARK: - ViewModel
-extension CalculatorView {
-    @Observable
-    class ViewModel {
-
-        var calculator = Calculator()
-        var history = ""
-        var currentInput = ""
-
-        var display: String {
-            get {
-                history + "\n" + Self.prompt + " " + currentInput + Self.cursor
-            }
-        }
-
-        private static let prompt = ">"
-        private static let cursor = "_"
-        private static var nonNumericCharacters = {
-            var nonNumeric = NSMutableCharacterSet.decimalDigits
-            nonNumeric.insert(charactersIn: "-.")
-            nonNumeric.invert()
-            return nonNumeric
-        }()
-
-        func add(digit: String) {
-            // If the last item on the input is not part of a numerical value
-            // add a space
-            if let lastToken = currentInput.split(separator: " ").last,
-               lastToken.rangeOfCharacter(from: Self.nonNumericCharacters) != nil {
-                currentInput += " "
-            }
-
-            currentInput += digit
-        }
-
-        func add(operation: String) {
-            currentInput += " " + operation
-        }
-
-        func addSpace() {
-            currentInput += " "
-        }
-
-        func clear() {
-            if currentInput.isEmpty {
-                history = ""
-            } else {
-                currentInput = ""
-            }
-        }
-
-        func performCalculation() {
-            guard !currentInput.isEmpty else { return }
-
-            do {
-                let result = try calculator.evaluate(string: currentInput)
-                history += "\n" + Self.prompt + " " + currentInput
-                history += "\n" + String(result)
-                currentInput = ""
-            } catch {
-                history += "\nPlease check your equation for correct RPN formatting"
             }
         }
     }
 }
 
 #Preview {
-    CalculatorView()
+    CalculatorView(store: Store(initialState: CalculatorFeature.State()) {
+        CalculatorFeature()
+        }
+    )
 }
