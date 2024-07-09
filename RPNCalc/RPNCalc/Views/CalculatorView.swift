@@ -121,8 +121,6 @@ extension CalculatorView {
             get {
                 history + "\n" + Self.prompt + " " + currentInput + Self.cursor
             }
-            set { } // Do nothing. Needed as `TextEditor` requires two-way binding
-                    // even though the view is set to read-only
         }
 
         private static let prompt = ">"
