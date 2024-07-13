@@ -27,15 +27,6 @@ enum Operator: Equatable {
         }
     }
 
-    var symbol: String {
-        switch self {
-        case .addition: "+"
-        case .subtraction: "-"
-        case .multiplication: "*"
-        case .division: "/"
-        }
-    }
-
     func apply(_ a: Double , _ b: Double) throws -> Double {
         switch self {
         case .addition: return a + b
