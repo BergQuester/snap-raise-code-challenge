@@ -154,6 +154,7 @@ extension CalculatorView {
         func clear() {
             if currentInput.isEmpty {
                 history = ""
+                calculator.clear()
             } else {
                 currentInput = ""
             }
