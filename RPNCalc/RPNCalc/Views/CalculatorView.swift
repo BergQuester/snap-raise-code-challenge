@@ -98,7 +98,7 @@ extension CalculatorView {
                 button(withTitle: "+", color: .orange, action: { viewModel.add(operation: "+") })
             }
             HStack(spacing: buttonSpacing) {
-                button(withTitle: "0", color: .gray, action: { viewModel.add(operation: "0") })
+                button(withTitle: "0", color: .gray, action: { viewModel.add(digit: "0") })
                 button(withTitle: "_", color: Color(UIColor.darkGray), action: { viewModel.addSpace() })
                 button(withTitle: ".", color: .gray, action: { viewModel.add(digit: ".") })
                 button(withTitle: "↵", color: .orange, action: { viewModel.performCalculation() })
